@@ -1,0 +1,195 @@
+/* General Styling */
+body {
+    font-family: 'Poppins';
+    scroll-behavior: smooth;
+}
+
+/* General animation styles */
+.slide-up {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.slide-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Apply the animation to specific elements */
+.your-section h2,
+.your-section p {
+    animation-name: slide-up;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+/* Navigation Styles */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999; /* Ensure it's above other elements */
+    background-color: white; /* Set the background color to white */
+}
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+    padding: 0 15px;
+    position: relative;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: green;
+}
+
+.navbar a:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: green;
+}
+
+/* Contact Button Styling */
+.contact-btn {
+    /* ... other styles ... */
+    color: black;
+    background-color: transparent; /* Set initial background to transparent */
+    border: 2px solid black;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-btn:hover {
+    color: white; /* Ensure text turns white */
+    border-color: green;
+}
+
+/* Hero Section Styling */
+.hero {
+    min-height: 100vh; /* Full screen height */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 0 15%; /* Add padding to the sides to keep the text aligned nicely */
+    display: flex;
+    align-items: center; /* Vertically center the text */
+}
+
+/* Dark Overlay Effect for Better Text Visibility */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with transparency */
+    z-index: 1;
+}
+
+/* Styling for Text on the Hero Section */
+.hero .container {
+    position: relative;
+    z-index: 2; /* Ensure the text appears above the overlay */
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+.about {
+    padding: 50px 0;
+}
+
+.about h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.about img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Add spacing between hero and about sections */
+#about {
+    margin-top: 100px; /* Adjust the value as needed */
+}
+
+.product-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    width: 200px; /* Adjust width for smaller cards */
+    margin: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out; /* Add transition for smooth scaling */
+}
+.product-card:hover .card-content {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-content {
+    padding: 10px; /* Reduce padding for smaller cards */
+    text-align: center;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out; /* Add transition for smooth scaling */
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.1); /* Slight zoom effect on the image itself */
+}
+
+.products .shop-with-ease {
+    color: green;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+.product {
+    text-decoration: none;
+
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .navbar a {
+        font-size: 0.9rem;
+    }
+
+    .product-card {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
